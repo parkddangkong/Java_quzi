@@ -1,0 +1,43 @@
+package day03;
+
+import java.util.Scanner;
+
+public class day3_Quzi1 {
+	public static void main(String[] args) {
+		// 지하철 한 구간 당 약 3분의 시간이 소요된다고 가정한다
+		// 이동한 지하철 구간 수를 입력받아서
+		// 걸린시간을 출력하세요
+		// 단, 시간이 60분을 초과하면, 시간과 분으로 나누어서 출력하고
+		// 60분 이하면, 분으로만 출력하세요
+		// 문자열의 형식을 지정하기 위해서, String.format(format,args...) 함수를 사용
+		
+		Scanner sc = new Scanner(System.in);
+		int sta, time;
+		
+		System.out.println("지하철 구간 수 입력 : ");
+		sta = Integer.parseInt(sc.nextLine());
+		
+		time = sta*3;
+		// 지하철 타는 동안의 시간
+		int hour, min;
+		
+		String total;
+		System.out.println("지하철 타는 동안의 시간 : "+time);
+		
+		if(time>60) {
+			// if 조건문을 이용해서 60분을 초과하면 시간과 분이 따로 출력
+			hour = time / 60;
+			min = time % 60;
+			
+			total = String.format("%d시간 %d",hour,min);
+			System.out.println(total);
+		}
+		else if(time <= 60) {
+			// 또 다른 조건식을 넣어서 분만 나오도록함
+			total = String.format("%d분",time);
+			System.out.println(total);
+		}
+		
+	}
+
+}
