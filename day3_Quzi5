@@ -1,0 +1,45 @@
+package day03;
+
+import java.util.Scanner;
+
+public class Quzi4 {
+	public static void main(String[] args) {
+		// 놀이기구 이용 시간에 따른 이용 요금을 계산하려고 한다
+		// 기본 요금은 3000원 이며, 10분마다 500원의 추가요금이 발생한다
+		// 요금표는 다음과 같다
+		// 0 ~ 30 : 3000
+		// 31 ~ 40 : 3500
+		// 41 ~ 50 : 4000
+		// 51 ~ 60 : 4500
+		// ...
+
+		// 반복문 사용 없이, if를 이용하여 시간을 분 단위로 입력받고, 요금을 계산하여 출력하세요
+
+		Scanner sc = new Scanner(System.in);
+		int money = 3000;
+		int time, add;
+
+
+		System.out.println("이용 시간 입력(분) : ");
+		time = Integer.parseInt(sc.nextLine());
+
+		if (0 <= time && time <= 30) {
+			// 기본요금
+			add = 3000;
+		} 
+		else if (time % 10 == 0) {
+			// 30분 이상인 요금 구하는 법
+			add = 3000;
+			add += 500 * (((time - 30) / 10) + 0);
+		} 
+		else {
+			add = 3000;
+			add+= 500 * (((time - 30) / 10) + 1);
+		}
+
+		System.out.printf("요금 : %, d원\n", add);
+		sc.close();
+
+	}
+
+}
