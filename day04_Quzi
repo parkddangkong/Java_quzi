@@ -1,0 +1,61 @@
+package day04;
+
+import java.util.Scanner;
+
+public class Quzi1 {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int num1,num2,num3;
+	// 1) 정수를 입력받아서 절대값을 출력하기
+	System.out.println("정수 입력1 : ");
+	num1 = Integer.parseInt(sc.nextLine());
+
+	if(num1 < 0) {
+		// num1 변수의 값을 절대값을 만들기 위해서 -1을 곱해줌
+		num1 *= -1;
+	}
+	System.out.println(num1);
+	
+	// 2) 두 정수를 입력받아서 작은 값을 출력하기
+	System.out.println("정수 입력2 : ");
+	num2 = Integer.parseInt(sc.nextLine());
+	System.out.println("정수 입력3 : ");
+	num3 = Integer.parseInt(sc.nextLine());
+	int min;
+	if(num2<num3) {
+		min = num2;
+	}
+	else {
+		min = num3;
+	}
+	System.out.println(min);
+
+	// 3) 세 정수를 입력받아서 가장 작은 값을 출력하기
+	int min2,num4, num5, num6;
+	System.out.println("정수 입력1 : ");
+	num4 = Integer.parseInt(sc.nextLine());
+	
+	System.out.println("정수 입력2 : ");
+	num5 = Integer.parseInt(sc.nextLine());
+	
+	System.out.println("정수 입력3 : ");
+	num6 = Integer.parseInt(sc.nextLine());
+	
+	if(num4<num5 && num4<num6) {
+		min2 = num4;
+	}
+	else if(num5<num4 && num5<num6) {
+		min2 = num5;
+	}
+	else if(num6<num4 && num6<num5){
+		min2 = num6;
+	}
+	System.out.println(num6);
+	// 4) 정수의 범위가 1에서 20사이에 포함되면 true, 아니면 false 출력하기
+	int num7;
+	System.out.println("정수 입력 : ");
+	num7 = Integer.parseInt(sc.nextLine());
+	boolean a= num7>=1&&num7<=20 ? true : false;
+	System.out.println(a);
+}
+}
