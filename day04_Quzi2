@@ -1,0 +1,55 @@
+package day04;
+
+import java.util.Scanner;
+
+public class Quzi2 {
+	public static void main(String[] args) {
+		// ea : 1, eb : 8, ec : 3
+		// 입력 : 7
+		// 출력 : eb 엘리베이터가 이동합니다
+		
+		Scanner sc = new Scanner(System.in);
+		int ea, eb, ec, a;
+		int eac, ebc, ecc;
+		
+		System.out.println("ea 층수 입력 : ");
+		ea = Integer.parseInt(sc.nextLine());
+		// 층수를 입력 받아서 ea변수에 넣음
+		
+		System.out.println("eb 층수 입력 : ");
+		eb = Integer.parseInt(sc.nextLine());
+		// 층수를 입력 받아서 eb변수에 넣음
+		
+		System.out.println("ec 층수 입력 : ");
+		ec = Integer.parseInt(sc.nextLine());
+		// 층수를 입력 받아서 eb변수에 넣음층수를 입력 받아서 eb변수에 넣음
+		
+		System.out.println("도착 층수 : ");
+		a=Integer.parseInt(sc.nextLine());
+		
+		
+		eac = Math.abs(ea - a);
+		// Math.abs는 절대값으로 만들어주는 메서드
+		ebc = Math.abs(eb - a);
+		ecc = Math.abs(ec- a);
+		
+		String min;
+		
+		if(eac<ebc && eac<ecc) {
+			min = "ea";
+		}
+		else if(ebc<eac&&ebc<ecc) {
+			min = "eb";
+		}
+		else {
+			min = "ec";
+		}
+		
+		System.out.println(min+" 엘레베이터가 움직입니다.");
+		
+		
+		sc.close();
+		
+				
+	}
+}
