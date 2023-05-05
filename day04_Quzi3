@@ -1,0 +1,31 @@
+package quzi;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Quzi4_Updown {
+	public static void main(String[] args) {
+		Random ran = new Random();
+		//Random 클래스의 객체를 생성하고, 그 객체를 ran 변수에 할당하는 코드
+		Scanner sc= new Scanner(System.in);
+		int cnt = 0 ;
+		int answer = ran.nextInt(100) + 1;
+		int user;
+		
+		while(true) {
+			System.out.println("정답은 무엇일까요 : ");
+			user = Integer.parseInt(sc.nextLine());
+			if (user > answer) {
+				System.out.println("다운입니다.");
+			}
+			else if (user < answer) {
+				System.out.println("업입니다.");
+			}
+			else {
+				System.out.println("축하합니다!");
+				break;
+			}
+			cnt +=1;
+			
+		}
+		System.out.printf("%d회차 정답입니다!", cnt);
