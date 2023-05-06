@@ -1,0 +1,98 @@
+package day05;
+
+import java.util.Scanner;
+
+import javax.xml.stream.events.Characters;
+
+public class Quzi1 {
+	public static void main(String[] args) {
+		// while을 활용하여 다음 문제를 풀어주세요
+
+		// 1) Hello, world 를 3번만 출력하세요
+		int n = 0;
+		while(n<3) {	// while의 조건문을 이용해서 3번만 출력하도록함
+			System.out.println("Hello, world!");	// 출력할 문장
+			n++;	// 반복할 횟수를 하나씩 증가시킴
+		}
+		
+		
+		// 2) 1부터 20까지 한 줄에 띄어쓰기로 구분하여 출력하세요
+		int n2 = 1;	// 1부터 출력이기 때문에 n2를 1로 잡음
+		while(n2<=20) {	// 조건식을 20까지만 출력하도록 만듦
+			System.out.print(n2+" ");	// 출력
+			n2++;	// 1씩 증가
+		}
+		System.out.println();
+
+		// 3) A부터 Z까지 한 줄에 콤마로 구분하여 출력하세요
+		// 단, 마지막에는 콤마가 없어야 합니다
+		char n3 = 'A';	// A부터 출력을 시작함
+		while(n3<'Z') {	// Z까지 한 줄에 출력
+			System.out.print(n3+",");	// 출력
+			n3++;	// 하나씩 증가
+			if(n3=='Z') {	// 마지막으로 출력하는 Z는 ,를 안 붙여주기 위해 if문을 넣음
+				System.out.println(n3);	//출력
+			}
+		}
+		
+		
+
+		// 4) 1부터 100 사이의 정수 중 홀수의 합과 짝수의 합을 각각 계산하여 출력하세요
+		int n4=1;
+		int even = 0,odd = 0;
+		while(n4<=100) {	// 100까지의 정수
+			if(n4 % 2 == 0) {	// 짝수만 나오도록 하는 조건문
+				even += n4;	// 짝수의 합
+			}
+			else {
+				odd+=n4;	// 홀수의 합
+			}
+			n4++;
+		}
+		System.out.println("짝수 합 : "+even);	// 짝수의 합
+		System.out.println("홀수 합 : "+odd);	// 홀수의 합
+	
+		
+		// 5) 입력받은 정수를 거꾸로 출력하세요
+		// 입력 : 1234
+		// 출력 : 4321
+		int n5 =1234, result = 0;
+		
+		System.out.println("5) 정수 입력 : "+n5);
+		
+//									n5			result
+//		result *= 10;		//		1234		0
+//		result += n5 % 10;	//		1234		4
+//		n5 /= 10;			//		123			4
+//
+//		result *= 10;		// 		123			40
+//		result += n5 % 10;	//		123			43
+//		n5 /= 10;			// 		12			43
+//
+//		result *= 10;		//		12			430
+//		result += n5 % 10;	//		12			432
+//		n5 /= 10;			// 		1			432
+//		
+//		result *= 10;		//		1			4320
+//		result += n5 % 10;	//		1			4321
+//		n5 /= 10;			//		0			4321
+		
+		
+//		while(n5 != 0) {
+//			System.out.print(n5 % 10);
+//			n5 /= 10;
+//		}
+//		System.out.println();
+		
+		while(n5 != 0) {
+			result *= 10;		
+			result += n5 % 10;	
+			n5 /= 10;
+		}
+		System.out.println(result);
+		
+	
+
+	}
+
+}
