@@ -1,0 +1,20 @@
+package day07;
+
+public class Quzi1 {
+	public static void main(String[] args) {
+		// 전체 구구단 출력하기
+		// 2단부터 9단까지 각 단은 한줄 띄워서 구분합니다
+
+		// 단 마다 곱하는 수를 반복하여 수식을 출력한다
+		System.out.println("구구단");
+		for(int i =2; i<=9;i++) {	// 구구단의 i의 배수
+			for(int j = 1;j<=9;j++) {	// 구구단 하나씩 증가하면서 계산
+				System.out.printf("%d x %d = %d\n",i,j,i*j);
+				
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
