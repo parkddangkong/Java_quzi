@@ -1,0 +1,30 @@
+package day07;
+
+public class Quzi2 {
+	public static void main(String[] args) {
+		// 2023년 3월의 달력을 이중 for문으로 표현하세요
+		// 단, 요일은[일,월,화,수,목,금,토] 의 순서로 출력해야 하고
+		// 3월은 1일부터 31일까지 있습니다
+		// 밤위에 포함되지 않는 칸은 빈칸으로 두어야 합니다
+		// 3월 1일은 수요일입니다
+		int cnt = -2;
+		
+		System.out.printf("\t%6s\n\n","3월");
+		System.out.println("일,  월,  화,  수,  목,  금,  토");
+		
+		for(int i =1;i<6;i++) {			// 5줄
+			for(int j = 1;j<=7;j++) {	// 7칸
+				boolean flag = (1<=cnt) && (cnt<=31);
+				if(flag) {
+					System.out.printf("%3d",cnt);	// 만약 1 ~ 31사이
+				}
+				else {
+					System.out.print("    ");		// 아니면 빈칸만 출력
+				}
+				cnt +=1;	// 35번 동안 cnt가 1씩 증가한다
+			}
+			System.out.println();
+		}
+		
+	}
+}
